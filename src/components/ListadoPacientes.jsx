@@ -1,7 +1,6 @@
-
 import Paciente from "./Paciente";
 
-const ListadoPacientes = ({ pacientes, setPaciente }) => {
+const ListadoPacientes = ({ pacientes, setPaciente, eliminarPaciente }) => {
    
 
   return (
@@ -9,16 +8,17 @@ const ListadoPacientes = ({ pacientes, setPaciente }) => {
 
       {pacientes && pacientes.length ?(
         <>
-            <h2 className="font-black text-3xl text-center">Listado Pacientes</h2>
+            <h2 className="font-black text-3xl text-center">Listado pacientes</h2>
             <p className="text-xl mt-5 mb-10 text-center">
               Administra tus {""}
-              <span className="text-indigo-600 font-bold text-xlS">Pacientes y Citas </span>
+              <span className="text-indigo-600 font-bold text-xlS">pacientes y Citas </span>
             </p>
             {pacientes.map(paciente => (
               <Paciente 
                    key={paciente.id}
                    paciente={paciente} 
                    setPaciente={setPaciente}
+                   eliminarPaciente={eliminarPaciente}
               />
             ))}
             </>
@@ -26,7 +26,7 @@ const ListadoPacientes = ({ pacientes, setPaciente }) => {
 
       ) : (
         <>
-               <h2 className="font-black text-3xl text-center">no hay Pacientes</h2>
+               <h2 className="font-black text-3xl text-center">no hay pacientes</h2>
             <p className="text-xl mt-5 mb-10 text-center">
                  Comienza agregando pacientes {''}
               <span className="text-indigo-600 font-bold text-xlS">y apareceran en este lugar </span>
